@@ -1,4 +1,9 @@
 #include "point.h"
+#include <stdlib.h> // Para usar la funcion free
+
 void freePoints(point_t** points) {
-	//TODO 2. Free the memory allocated for the point_t array
+    if (points != NULL) {
+        free(*points); // Liberar la memoria para el array de puntos
+        *points = NULL; // Evitar el uso de punteros colgantes
+    }
 }

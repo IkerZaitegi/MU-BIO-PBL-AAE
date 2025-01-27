@@ -15,8 +15,8 @@ namespace UnitTest
             
             int numberOfPoints = readPoints(filename, &points);
             Logger::WriteMessage("In TestReadingWorksWithValidInput");
-            Assert::IsTrue(numberOfPoints > 0); //If the file is read correctly, the number of points should be greater than 0
-        }
+            Assert::IsTrue(numberOfPoints > 0); 
+        }//Si el archivo esta leido correctamente, el numero de puntos deveria de ser mayor que 0
 		TEST_METHOD(TestReadingNotWorksWithInvalidInput)
 		{
 
@@ -24,7 +24,7 @@ namespace UnitTest
             int numberOfPoints = readPoints("invalidpoints.txt", &points);
 
 			Logger::WriteMessage("In TestReadingNotWorksWithInvalidInput");
-			Assert::AreEqual(numberOfPoints, -1);//If the file is not read correctly, the function should return -1
+			Assert::AreEqual(numberOfPoints, -1);//Si no se lee bien , devuelve -1
 
 		}
         TEST_METHOD(TestReadingNotWorksWithUnexsistentFile){
@@ -32,7 +32,7 @@ namespace UnitTest
             point_t* points;
             int numberOfPoints = readPoints("points.txt", &points);
 			Logger::WriteMessage("In TestReadingNotWorksWithUnexsistentFile");
-			Assert::AreEqual(numberOfPoints, -2);//If the file does not exist, the function should return -2
-        }
+			Assert::AreEqual(numberOfPoints, -2);
+        }//Si el archivo no existe -2
     };
 }
